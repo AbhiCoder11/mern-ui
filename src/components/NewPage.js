@@ -21,10 +21,14 @@ class NewPage extends Component{
 
 // render is simply a function is a container that hold attributes of our markup(html)
     render(){
+        console.log('render of newpage');
+
+        console.log(this.props);
+
               // render handles all markup(html) /tags inside return
       return(
           <div>
-          <h1>this will go to top</h1>
+          <h1>this {this.props.name} will go to top</h1>
           <form>
               name
               <input type="text" value ={this.state.name} onChange={this.handleName} />
