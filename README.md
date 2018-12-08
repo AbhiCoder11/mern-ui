@@ -17,9 +17,16 @@ TypeError: Cannot assign to read only property 'country' of object '#<Object>';
 
 ***React lifecycle;
 1.Initialization
+   -constructor()- No
 2.Mounting
+   -componentWillMount- Yes ,but not a good practice
+    -componentWillReceiveProps - Yes ,but not a good practice
+    -shouldComponentUpdate() - return true by default. - No
+    -componentWillUpdate - Yes ,but not a good practice
+    -render()- No
+    -componentDidUpdate();
 3.UnMounting
-
+  - componentWillUnmount();
 to control and manage these life cycle we have react-libarary functions for every lifecycle.
 
 //imp function
@@ -39,4 +46,24 @@ to control and manage these life cycle we have react-libarary functions for ever
       this.setState({})
 
 
-      so, can I call this.setState({}) in all life-cycle methods?
+      so, can I call this.setState({}) in all life-cycle methods?- No
+
+
+      1.controlled vs uncontrolled components.
+      
+
+      // when this.setState() is called render is called;
+       when render is called we get a new state.
+
+       So, when you write this.setState inside render it becomes infinite loop. never never.
+
+       -DFS 
+
+       -checkbox and radio buttons.
+
+       - for each DOM we have a unique state and handler and for every handler we have an event . i.e Handler function (onChange)  represent the DOM.
+       - list and keys.
+
+       {}- use to write values or dynamic dta within JSX;
+
+       Each child in an array or iterator should have a unique "key" prop.

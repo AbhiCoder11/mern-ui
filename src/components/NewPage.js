@@ -8,8 +8,11 @@ class NewPage extends Component{
         this.state= {
           name:'',
           age:'',
+          description:'',
+          file:'',
         }
     this.handleName = this.handleName.bind(this);
+    this.getFormData = this.getFormData.bind(this);
     }
 
     handleName(e){
@@ -17,21 +20,44 @@ class NewPage extends Component{
             console.log(this.state.name)
         });
     }
+    handleAge(e){
+      this.setState({age:e.target.value});
+    }
+
+    handleDescription(e){
+      this.setState({description:e.target.value});
+    }
+    uploadFile(e){
+        console.log(e.target.files[0]);
+        //this.setState({file:e.target.files[0]})
+        var formData = new FormData();
+        var forAPi = formData.append('file',e.target.files[0]);
+        console.log(forAPi);
+    }
     
+    getFormData(e){
+        console.log('got form dta');
+        console.log(this.state);
+        e.preventDefault();
+    }
 
-// render is simply a function is a container that hold attributes of our markup(html)
     render(){
-        console.log('render of newpage');
+    console.log(this.props);
 
-        console.log(this.props);
-
-              // render handles all markup(html) /tags inside return
       return(
           <div>
           <h1>this {this.props.name} will go to top</h1>
-          <form>
+          <form onSubmit = {this.getFormData}>
               name
-              <input type="text" value ={this.state.name} onChange={this.handleName} />
+              <input type="text" value ={this.state.name} onChange={this.handleName} /><br></br>
+              age
+              <input type="text" value ={this.state.age} onChange={this.handleAge.bind(this)} /><br></br>
+              description
+              <textarea value={this.state.description} onChange= {this.handleDescription.bind(this)}></textarea><br></br>
+              Upload File:
+              <input type="file" value ={this.state.file} onChange={this.uploadFile} /><br></br>
+              <button onClick= {this.getFormData}>Save</button>
+
           </form>    
           </div>
       )
