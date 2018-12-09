@@ -27,6 +27,11 @@ class Header extends Component{
     getList(){
         return this.state.testArr.map(item => <li key={item.id}>{item.name}</li>)
     }
+    
+   getName(){
+       console.log(this.name.value);
+   }
+
     render(){
         console.log(this.props);
         let myProp = this.props;
@@ -36,6 +41,8 @@ class Header extends Component{
             <div>
                 <h1>React Training at Sandfox in {myProp.country}</h1>
                 <p>React the most popular JS framework for developing view layer</p>
+                <input type="text" ref={name => this.name = name}/>
+                <button onClick={this.getName.bind(this)}>Click now</button>
                 <ul>
                    {this.getList()}
                 </ul>   

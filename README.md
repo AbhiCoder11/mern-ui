@@ -67,3 +67,17 @@ to control and manage these life cycle we have react-libarary functions for ever
        {}- use to write values or dynamic dta within JSX;
 
        Each child in an array or iterator should have a unique "key" prop.
+
+       we should always try to keep our render() more and more simple and clear.
+
+       inside render return if you want to use JS functions use {this.myfunction()}
+
+       e.target{
+           value:'',
+           checked:true/false,
+       }
+
+       - the onchange handler function represents the DOM.
+
+       //refs and uncrolled events.
+       - uncontrolled events dont have a handler dont have a DOM state value. they are simply stored as variable in primary memory.
