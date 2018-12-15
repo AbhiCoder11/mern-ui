@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 
 class NewPage extends Component{
@@ -38,6 +39,15 @@ class NewPage extends Component{
         }
     this.handleName = this.handleName.bind(this);
     this.getFormData = this.getFormData.bind(this);
+    }
+  //API call will be handled in didmount and axios is preferred
+    componentDidMount(){
+        axios.get('https://jsonplaceholder.typicode.com/posts') // get a resource 
+            .then(res =>{
+                console.log('dta from api')
+                console.log(res)
+            } ) // then is a kind of promise
+            .catch(err => console.log(err));
     }
 
     handleName(e){

@@ -81,3 +81,7 @@ to control and manage these life cycle we have react-libarary functions for ever
 
        //refs and uncrolled events.
        - uncontrolled events dont have a handler dont have a DOM state value. they are simply stored as variable in primary memory.
+       - refs should be avoided as much as possible. the good approach is we handle maintain data in DOM using state and a handler.
+
+       -SOAP and REST - two ways to provide backend services. REST is prefeered. 
+       -talking to API
