@@ -84,4 +84,11 @@ to control and manage these life cycle we have react-libarary functions for ever
        - refs should be avoided as much as possible. the good approach is we handle maintain data in DOM using state and a handler.
 
        -SOAP and REST - two ways to provide backend services. REST is prefeered. 
-       -talking to API
+       -talking to API.
+
+       -forEach,map,reduce,filter,find - most used array function
+
+       - om the route path or if you have more than one path for same component. you need to write "exact" as a prop.
+
+       - for non-parmater URL "component" is preferred, and for parameterized URL "render" is used
+        render is function that will pass all the props associated with that specific route as "JSX prop".

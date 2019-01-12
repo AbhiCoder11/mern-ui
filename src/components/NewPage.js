@@ -14,6 +14,7 @@ class NewPage extends Component{
           city:'',
           chkArr:[],
           stayOpen:true,
+          apiResponseArr:[],
           cityArr:[
               {
                   id:1,
@@ -45,7 +46,8 @@ class NewPage extends Component{
         axios.get('https://jsonplaceholder.typicode.com/posts') // get a resource 
             .then(res =>{
                 console.log('dta from api')
-                console.log(res)
+                console.log(res.data);
+                this.setState({apiResponseArr:res.data});
             } ) // then is a kind of promise
             .catch(err => console.log(err));
     }
@@ -106,9 +108,13 @@ class NewPage extends Component{
 
     render(){
     console.log(this.props);
+    const {apiResponseArr} = this.state;
+    console.log('its local arr now');
+    console.log(apiResponseArr);
 
       return(
           <div>
+              {/* {apiResponseArr.map(item=>(<h3 key ={item.id}>{item.title}</h3>))} */}
           <h1>this {this.props.name} will go to top</h1>
           <form onSubmit = {this.getFormData}>
               First name
