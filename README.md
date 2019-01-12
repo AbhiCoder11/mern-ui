@@ -92,3 +92,19 @@ to control and manage these life cycle we have react-libarary functions for ever
 
        - for non-parmater URL "component" is preferred, and for parameterized URL "render" is used
         render is function that will pass all the props associated with that specific route as "JSX prop".
+
+
+        Immutability
+
+        Two kind of data type
+        1.Primitive- Immutable by default
+        2.Reference - Mutable by default
+
+        There are some functions written purposely to support immutability
+        1.concat()
+        2.filter()
+        3.reduce()
+        4.Object.assign()
+        5.map()
+
+        - spread operator(ES6) is quick way to use immutability in JS.
